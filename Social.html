@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social – Schwanz ML</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #111;
+    }
+
+    .welcome-bar {
+      background: #007bff;
+      overflow: hidden;
+      height: 40px;
+      position: relative;
+      border-radius: 0 0 6px 6px;
+    }
+
+    .moving-text {
+      white-space: nowrap;
+      position: absolute;
+      animation: scroll-left 10s linear infinite;
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+      padding-left: 100%;
+      line-height: 40px;
+      text-transform: uppercase;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+    }
+
+    .branding img.logo {
+      width: 45px;
+      height: 45px;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+
+    .branding .name {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .ml-blue {
+      color: #007bff;
+    }
+
+    .hamburger {
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 100px;
+      background-color: #f9f9f9;
+      min-width: 140px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .dropdown a {
+      padding: 12px 16px;
+      display: block;
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+    }
+
+    .dropdown a:hover {
+      background-color: #ddd;
+    }
+
+    .content {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .content h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .channel-logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 15px;
+      margin: 10px auto 20px;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .subscribe-btn {
+      margin-top: 10px;
+      background: #ff0000;
+      color: white;
+      padding: 14px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+    }
+
+    .subscribe-btn:hover {
+      background: #cc0000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="welcome-bar">
+    <div class="moving-text">SELAMAT DATANG</div>
+  </div>
+
+  <div class="header">
+    <div class="branding">
+      <img class="logo" src="https://i.ibb.co/zHLk6RWq/cfacf0399b01eb6bcc47e2cdccc61603.jpg" alt="Logo Channel" />
+      <div class="name">
+        Schwanz <span class="ml-blue">ML</span>
+      </div>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </div>
+
+  <div id="dropdownMenu" class="dropdown">
+    <a href="Halaman Utama.html">Home</a>
+    <a href="category.html">Category</a>
+    <a href="social.html">Social</a>
+  </div>
+
+  <div class="content">
+    <h1>Main Channel</h1>
+
+    <img class="channel-logo" src="https://i.ibb.co/zHLk6RWq/cfacf0399b01eb6bcc47e2cdccc61603.jpg" alt="Logo Channel">
+
+    <button class="subscribe-btn" onclick="window.open('https://www.youtube.com/@schwanzml','_blank')">
+      Subscribe Now
+    </button>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    window.onclick = function (e) {
+      if (!e.target.matches('.hamburger')) {
+        document.getElementById("dropdownMenu").style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
