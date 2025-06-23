@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natan MSC - Download</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+      color: #111;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    .branding {
+      display: flex;
+      align-items: center;
+    }
+    .branding img {
+      width: 45px;
+      height: 45px;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+    .branding .name {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .ml-blue {
+      color: #007bff;
+    }
+    .hamburger {
+      font-size: 26px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 100px;
+      background-color: #f9f9f9;
+      min-width: 140px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .dropdown a {
+      color: #111;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: 500;
+    }
+    .dropdown a:hover {
+      background-color: #ddd;
+    }
+    .info-box {
+      border: 2px solid;
+      padding: 15px;
+      margin: 15px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .blue-box {
+      border-color: #007bff;
+      color: #007bff;
+      text-align: center;
+    }
+    .red-box {
+      border-color: red;
+      color: red;
+      text-align: center;
+    }
+    .table-container {
+      padding: 0 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border-bottom: 1px solid #ccc;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .btn-download {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 2px solid #007bff;
+      border-radius: 25px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn-download:hover {
+      background-color: #007bff;
+      color: white;
+    }
+    .note {
+      font-size: 13px;
+      padding: 10px 15px;
+    }
+    .note span {
+      display: inline-block;
+      margin: 5px 0;
+    }
+    .hero-section {
+      padding: 0 15px;
+      text-align: center;
+    }
+    .hero-section h2 {
+      margin-bottom: 0;
+    }
+    .hero-section h4 {
+      margin-top: 5px;
+      font-weight: normal;
+    }
+    .hero-section iframe {
+      margin: 20px auto;
+      display: block;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    .feature-lists {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0 15px 30px;
+    }
+    .feature-box {
+      width: 48%;
+    }
+    .feature-box h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .feature-box ul {
+      padding-left: 18px;
+    }
+    .search-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0 0;
+      padding: 0 20px;
+    }
+    .search-wrapper input {
+      width: 100%;
+      max-width: 400px;
+      padding: 12px 18px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      outline: none;
+      transition: 0.3s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .search-wrapper input:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    }
+    footer {
+      background: #f1f1f1;
+      padding: 30px 20px;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+    .footer-container {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .footer-container div {
+      flex: 1 1 200px;
+    }
+    footer h3, footer h4 {
+      margin-bottom: 10px;
+    }
+    footer ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    footer ul li a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    footer ul li a:hover {
+      text-decoration: underline;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      color: #555;
+      font-size: 13px;
+    }
+    hr {
+      margin: 30px auto;
+      width: 90%;
+      border-color: #ccc;
+    }
+  </style>
+</head>
+<!-- ... (head & style tetap sama seperti sebelumnya) ... -->
+<body>
+  <div style="background-color:#007bff; color:white; font-weight:bold; text-align:center;">
+    <marquee behavior="scroll" direction="left">SELAMAT DATANG!</marquee>
+  </div>
+  <div class="header">
+    <div class="branding">
+      <img src="https://i.ibb.co/zHLk6RWq/cfacf0399b01eb6bcc47e2cdccc61603.jpg" alt="Logo Channel" />
+      <div class="name">Schwanz <span class="ml-blue">ML</span></div>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </div>
+
+  <!-- SEARCH BAR DIPINDAH KE SINI -->
+  <div class="search-wrapper" style="margin-top: 10px;">
+    <input type="text" placeholder="Search nama skin..." id="searchInput" onkeyup="filterTable()" />
+  </div>
+
+  <div id="dropdownMenu" class="dropdown">
+    <a href="home.html">Home</a>
+    <a href="category.html">Category</a>
+    <a href="Social.html">Social</a>
+  </div>
+
+  <!-- Lanjut seperti biasa -->
+  <div class="hero-section">
+    <h2>Natan MSC</h2>
+    <h4>(Download Dibawah)</h4>
+    <h3><u>Short Story</u></h3>
+    <p style="text-align:justify; max-width:600px; margin:auto;">
+      A thousand years after falling into a deep slumber, the Lord of the Abyss and the Lord of Light awoke, and so the Endless War raged once more. Natan stood as Eruditio's leader...
+    </p>
+    <iframe width="100%" height="215" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" allowfullscreen></iframe>
+  </div>
+
+  <!-- ... (sisa konten tetap seperti sebelumnya) ... -->
+  </div>
+
+  <div class="feature-lists">
+    <div class="feature-box">
+      <h3>Support Voice</h3>
+      <ul>
+        <li>Indonesia</li>
+        <li>English</li>
+        <li>English PH</li>
+        <li>Japan</li>
+        <li>Arabic</li>
+      </ul>
+    </div>
+    <div class="feature-box">
+      <h3>Kelebihan Lainnya</h3>
+      <ul>
+        <li>Support untuk grafik low</li>
+        <li>Head Icon</li>
+        <li>Skill Icon</li>
+        <li>Share Background</li>
+        <li>File sudah dikompres</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note">
+    <span>🗣️ Pilih sesuai dengan yang dibutuhkan.</span><br />
+    <span>❌ Jika download malah balik kesini, berarti filenya belum ada.</span>
+  </div>
+
+  <div class="search-wrapper">
+    <input type="text" placeholder="Search nama skin..." id="searchInput" onkeyup="filterTable()" />
+  </div>
+
+  <div class="table-container">
+    <h2 style="text-align:center;">Table List Natan MSC</h2>
+    <p style="text-align:center;">Last Updated <strong>2025-06-18</strong></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Replace</th>
+          <th>Download</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Default</td><td><a class="btn-download" href="#">✓ Download</a></td></tr>
+        <tr><td>Basic</td><td><a class="btn-download" href="#">✓ Download</a></td></tr>
+        <tr><td>Elite</td><td><a class="btn-download" href="#">✓ Download</a></td></tr>
+        <tr><td>Starlight</td><td><a class="btn-download" href="#">✓ Download</a></td></tr>
+        <tr><td>Special</td><td><a class="btn-download" href="#">✓ Download</a></td></tr>
+        <tr><td>Collector</td><td><a class="btn-download" href="#">✓ Download</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box blue-box">
+    *File dari unity3d dan .bnk dari ini sudah terisi WM(Watermark) dari Kazeo Official, semua file saya buat sendiri jadi tidak ada nama orang lain, jadi jangan reupload ya~
+  </div>
+
+  <div class="info-box red-box">
+    Jika ada kerusakan/bug seperti tidak ada suara, tidak ada efek skill dan lain lain, silahkan lapor ke admin <a href="#" style="color:red;text-decoration:underline;">disini</a>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h3>Komunitas MLBB Terbaik Sepanjang Masa!</h3>
+        <p>Gabung dan nikmati semua konten hero dan skin terbaru!</p>
+      </div>
+      <div>
+        <h4>Quick Link</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="category.html">Category</a></li>
+          <li><a href="Social.html">Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Popular</h4>
+        <ul>
+          <li><a href="#">Xavier Jujutsu</a></li>
+          <li><a href="#">Harith HXH</a></li>
+          <li><a href="#">Granger Exorcist</a></li>
+          <li><a href="#">Fanny Aspirants</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Saweria</a></li>
+          <li><a href="#">Tako ID</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="footer-bottom">
+      © 2025 Schwanz ML. Moonton All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+    window.onclick = function (e) {
+      if (!e.target.matches('.hamburger')) {
+        document.getElementById("dropdownMenu").style.display = "none";
+      }
+    }
+
+    function filterTable() {
+      const input = document.getElementById('searchInput');
+      const filter = input.value.toLowerCase();
+      const rows = document.querySelectorAll('.table-container tbody tr');
+
+      rows.forEach(row => {
+        const skin = row.cells[0].textContent.toLowerCase();
+        row.style.display = skin.includes(filter) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
