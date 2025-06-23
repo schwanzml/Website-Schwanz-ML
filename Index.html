@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="id"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schwanz ML</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: white;
+      color: #111;
+    }
+    .welcome-bar {
+      background: #007bff;
+      overflow: hidden;
+      height: 40px;
+      position: relative;
+      border-radius: 0 0 6px 6px;
+    }
+    .moving-text {
+      white-space: nowrap;
+      position: absolute;
+      animation: scroll-left 10s linear infinite;
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+      padding-left: 100%;
+      line-height: 40px;
+      text-transform: uppercase;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    .branding {
+      display: flex;
+      align-items: center;
+    }
+    .branding img {
+      width: 45px;
+      height: 45px;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+    .branding .name {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .ml-blue {
+      color: #007bff;
+    }
+    .hamburger {
+      font-size: 26px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 100px;
+      background-color: #f9f9f9;
+      min-width: 140px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .dropdown a {
+      color: #111;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: 500;
+    }
+    .dropdown a:hover {
+      background-color: #ddd;
+    }
+    .search-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      padding: 0 20px;
+    }
+    .search-wrapper input {
+      width: 100%;
+      max-width: 400px;
+      padding: 12px 18px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      outline: none;
+      transition: 0.3s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .search-wrapper input:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    }
+    .skin-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .skin-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .skin-card:hover {
+      transform: translateY(-5px);
+    }
+    .skin-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+    .skin-card p,
+    .skin-card h4 {
+      padding: 6px 10px;
+      margin: 0;
+    }
+    .skin-card p {
+      font-size: 13px;
+      color: #666;
+    }
+    .skin-card h4 {
+      font-size: 15px;
+    }
+    /* Footer */
+    footer {
+      background: #f1f1f1;
+      padding: 30px 20px;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+    .footer-container {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .footer-container div {
+      flex: 1 1 200px;
+    }
+    footer h3, footer h4 {
+      margin-bottom: 10px;
+    }
+    footer ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    footer ul li a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    footer ul li a:hover {
+      text-decoration: underline;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      color: #555;
+      font-size: 13px;
+    }
+    hr {
+      margin: 30px auto;
+      width: 90%;
+      border-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-bar">
+    <div class="moving-text">SELAMAT DATANG!</div>
+  </div>
+  <div class="header">
+    <div class="branding">
+      <img src="https://i.ibb.co/zHLk6RWq/cfacf0399b01eb6bcc47e2cdccc61603.jpg" alt="Logo Channel" />
+      <div class="name">Schwanz <span class="ml-blue">ML</span></div>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </div>
+  <div class="search-wrapper">
+    <input type="text" placeholder="Search disini..." id="searchInput" onkeyup="filterSkins()" />
+  </div>
+  <div id="dropdownMenu" class="dropdown">
+    <a href="Halaman utama.html">Home</a>
+    <a href="category.html">Category</a>
+    <a href="Social.html">Social</a>
+  </div>
+  <div class="skin-list">
+    <div class="skin-card"><img src="https://i.ibb.co/Z1Rs2GyT/61afda13300cc1359156fc977532a096.jpg"><p>2025-06-22</p><h4 class="skin-name">Natan MSC</h4></div>
+    <div class="skin-card"><img src="https://i.ibb.co/7tQRtQTS/c7102aafa707e26e090d21daee9ccc95.jpg"><p>2025-06-22</p><h4 class="skin-name">Luo Yi Create</h4></div>
+    <div class="skin-card"><img src="https://i.ibb.co/HpM8hv8K/dfec59785ee85599cffd242b898bc99b.jpg"><p>2025-06-22</p><h4 class="skin-name">Lesley Fatcat</h4></div>
+    <div class="skin-card"><img src="https://i.ibb.co/21FRyQvs/55a232e5bff91b81d0055b4b0ad0e63b.jpg"><p>2025-06-22</p><h4 class="skin-name">Julian Fatcat</h4></div>
+    <div class="skin-card"><img src="https://i.ibb.co/GfnyGmd4/5652185a139616b6b0f1484eae5b8c9b.jpg"><p>2025-06-22</p><h4 class="skin-name">Arlott Collector</h4></div>
+    <div class="skin-card"><img src="https://i.ibb.co/KcZGDzzF/20250623-145632.jpg"><p>2025-06-22</p><h4 class="skin-name">Jawhead All Star</h4></div>
+    <div class="skin-card"><img src="https://i.ibb.co/pvNVqYsJ/78fea185496a53bfd373abfe2192a9f0.jpg"><p>2025-06-20</p><h4 class="skin-name">Silvanna Fatcat</h4></div>
+    <div class="skin-card"><img src="https://i.ibb.co/RksZRk98/20250623-145807.jpg"><p>2025-06-20</p><h4 class="skin-name">Alucard Luckbox Revamp</h4></div>
+  </div>
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h3>Komunitas MLBB Terbaik Sepanjang Masa!</h3>
+        <p>Gabung dan nikmati semua konten hero dan skin terbaru!</p>
+      </div>
+      <div>
+        <img src="https://i.ibb.co/fz2XnyNn/50a8c3cd-60b2-4187-baa7-f8be53976ee3-removalai-preview.png" alt="YouTube Logo" style="width:28px; height:28px; margin-bottom:10px;">
+        <h4>Quick Link</h4>
+        <ul>
+          <li><a href="Halaman utama.html">Home</a></li>
+          <li><a href="category.html">All Hero</a></li>
+          <li><a href="Social.html">Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Link</h4>
+        <ul>
+          <li><a href="Halaman utama.html">Home</a></li>
+          <li><a href="category.html">category</a></li>
+          <li><a href="Social.html">Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Popular</h4>
+        <ul>
+          <li><a href="#">Xavier Jujutsu</a></li>
+          <li><a href="#">Harith HXH</a></li>
+          <li><a href="#">Granger Exorcist</a></li>
+          <li><a href="#">Fanny Aspirants</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li>
+            <a href="#" style="display: flex; align-items: center;">
+              <img src="https://i.ibb.co/NDCTHg0/fe760d42-6c85-417a-9330-1a1578cfa4a5-removalai-preview.png" alt="Saweria" style="width:18px; height:18px; margin-right:6px;" />
+              Saweria
+            </a>
+          </li>
+          <li>
+            <a href="#" style="display: flex; align-items: center;">
+              <img src="https://i.ibb.co/gbWG2hmb/26d1567e-eb15-4f22-b848-1326d8d175ef-removalai-preview.png" alt="Tako ID" style="width:18px; height:18px; margin-right:6px;" />
+              Tako ID
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="footer-bottom">
+      © 2025 Schwanz ML. Moonton All rights reserved.
+    </div>
+  </footer>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+    window.onclick = function (e) {
+      if (!e.target.matches('.hamburger')) {
+        document.getElementById("dropdownMenu").style.display = "none";
+      }
+    }
+    function filterSkins() {
+      const input = document.getElementById('searchInput');
+      const filter = input.value.toLowerCase();
+      const cards = document.querySelectorAll('.skin-card');
+      cards.forEach(card => {
+        const skinName = card.querySelector('.skin-name').textContent.toLowerCase();
+        card.style.display = skinName.includes(filter) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
