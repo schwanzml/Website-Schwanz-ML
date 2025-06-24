@@ -136,37 +136,68 @@
     <a href="Social.html">Social</a>
   </div>  <div class="search-wrapper">
     <input type="text" placeholder="Search disini...">
-  </div>  <div class="category-list">
-    <div class="category-item">Dawning</div>
-    <div class="category-item">Christmast</div>
-    <div class="category-item">Atomic</div>
-    <div class="category-item">Prime</div>
-    <div class="category-item">Fatcat</div>
-    <div class="category-item">Lunar</div>
-    <div class="category-item">Allstar</div>
-    <div class="category-item">Transformers</div>
-    <div class="category-item">Mistbenders</div>
-    <div class="category-item">MSC</div>
-    <div class="category-item">Create</div>
-    <div class="category-item">Collector</div>
-    <div class="category-item">Neobeast</div>
-    <div class="category-item">MWORLD</div>
-    <div class="category-item">Sanrio</div>
-    <div class="category-item">Luckybox</div>
-    <div class="category-item">BTC</div>
-    <div class="category-item">HXH</div>
-    <div class="category-item">Vessels</div>
-    <div class="category-item">11.11</div>
-    <div class="category-item">AOT</div>
-  </div>  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("dropdownMenu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
+  </div>  
+  <div class="category-list">
+  <div class="category-item" onclick="goToCategory('Dawning')">Dawning</div>
+  <div class="category-item" onclick="goToCategory('Christmast')">Christmast</div>
+  <div class="category-item" onclick="goToCategory('Atomic')">Atomic</div>
+  <div class="category-item" onclick="goToCategory('Prime')">Prime</div>
+  <div class="category-item" onclick="goToCategory('Fatcat')">Fatcat</div>
+  <div class="category-item" onclick="goToCategory('Lunar')">Lunar</div>
+  <div class="category-item" onclick="goToCategory('Allstar')">Allstar</div>
+  <div class="category-item" onclick="goToCategory('Transformers')">Transformers</div>
+  <div class="category-item" onclick="goToCategory('Mistbenders')">Mistbenders</div>
+  <div class="category-item" onclick="goToCategory('MSC')">MSC</div>
+  <div class="category-item" onclick="goToCategory('Create')">Create</div>
+  <div class="category-item" onclick="goToCategory('Collector')">Collector</div>
+  <div class="category-item" onclick="goToCategory('Neobeast')">Neobeast</div>
+  <div class="category-item" onclick="goToCategory('MWORLD')">MWORLD</div>
+  <div class="category-item" onclick="goToCategory('Sanrio')">Sanrio</div>
+  <div class="category-item" onclick="goToCategory('Luckybox')">Luckybox</div>
+  <div class="category-item" onclick="goToCategory('BTC')">BTC</div>
+  <div class="category-item" onclick="goToCategory('HXH')">HXH</div>
+  <div class="category-item" onclick="goToCategory('Vessels')">Vessels</div>
+  <div class="category-item" onclick="goToCategory('11.11')">11.11</div>
+  <div class="category-item" onclick="goToCategory('AOT')">AOT</div>
+</div> 
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  window.onclick = function (e) {
+    if (!e.target.matches('.hamburger')) {
+      document.getElementById("dropdownMenu").style.display = "none";
     }
-    window.onclick = function (e) {
-      if (!e.target.matches('.hamburger')) {
-        document.getElementById("dropdownMenu").style.display = "none";
-      }
-    }
-  </script></body>
+  }
+
+  // Pergi ke halaman list berdasarkan kategori
+  function goToCategory(categoryName) {
+  const categoryPages = {
+    "Fatcat": "skin-fatcat.html",
+    "Neobeast": "skin-neobeast.html",
+    // tambahkan kategori lain jika perlu
+    
+  };
+
+  const page = categoryPages[categoryName];
+  if (page) {
+    window.location.href = page;
+  } else {
+    alert("Halaman kategori belum tersedia.");
+  }
+}
+
+  // Filter kategori berdasarkan input
+  document.querySelector('input[type="text"]').addEventListener('keyup', function () {
+    const filter = this.value.toLowerCase();
+    const categories = document.querySelectorAll('.category-item');
+    categories.forEach(item => {
+      const name = item.textContent.toLowerCase();
+      item.style.display = name.includes(filter) ? '' : 'none';
+    });
+  });
+</script>
+</body>
 </html>
