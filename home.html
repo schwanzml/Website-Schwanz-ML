@@ -1,21 +1,20 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Schwanz ML - Page 1</title>
   <style>
     body {
-      .hamburger {
-  font-size: 26px;
-  cursor: pointer;
-  user-select: none;
-  margin-right: 15px; /* atau 15px kalau mau lebih ke kiri */
-}
       margin: 0;
       font-family: Arial, sans-serif;
       background: white;
       color: #111;
+    }
+    .hamburger {
+      font-size: 26px;
+      cursor: pointer;
+      user-select: none;
+      margin-right: 15px;
     }
     .header, .welcome-bar, .search-wrapper, .dropdown, .skin-list, .pagination, footer {
       padding: 0 20px;
@@ -58,10 +57,6 @@
     }
     .ml-blue {
       color: #007bff;
-    }
-    .hamburger {
-      font-size: 26px;
-      cursor: pointer;
     }
     .dropdown {
       display: none;
@@ -131,14 +126,14 @@
       margin-top: 30px;
     }
     .pagination a.active {
-  background: #007bff;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  border: 1px solid #0056b3;
-  font-weight: bold;
-  box-shadow: 0 0 4px rgba(0,0,0,0.2);
-}
+      background: #007bff;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #0056b3;
+      font-weight: bold;
+      box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    }
     .pagination input {
       padding: 8px 12px;
       border-radius: 20px;
@@ -182,11 +177,28 @@
       color: #555;
       font-size: 13px;
     }
+    .processing-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 20px 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  z-index: 999;
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
   </style>
 </head>
 <body>
-
-  <!-- Header & Welcome -->
   <div class="welcome-bar"><div class="moving-text">SELAMAT DATANG!</div></div>
   <div class="header">
     <div class="branding">
@@ -195,66 +207,17 @@
     </div>
     <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
   </div>
-
-  <!-- Search -->
   <div class="search-wrapper">
-    <input type="text" placeholder="Search disini..." id="searchInput" onkeyup="filterSkins()" />
-  </div>
-
-  <!-- Menu Dropdown -->
+  <input type="text" placeholder="Search disini..." id="searchInput" onkeyup="filterSkins()" />
+</div>
   <div id="dropdownMenu" class="dropdown">
     <a href="home.html">Home</a>
     <a href="category.html">Category</a>
     <a href="social.html">Social</a>
   </div>
-
-  <!-- Skin Cards - Page 1 -->
-  <div class="skin-list">
-    <div class="skin-card">
-  <a href="natan-msc.html">
-    <img src="https://i.ibb.co/N2wWZMnp/61afda13300cc1359156fc977532a096.jpg" />
-  </a>
-  <p>2025-06-18</p>
-  <h4 class="skin-name">Natan MSC</h4>
-</div>
-    <div class="skin-card">
-  <a href="luo-yi-create.html">
-    <img src="https://i.ibb.co/B2FV3HFw/c7102aafa707e26e090d21daee9ccc95.jpg" alt="Skin Ke-10" />
-  </a>
-  <p>2025-06-18</p>
-  <h4 class="skin-name">Luo Yi Create</h4>
-</div>
-    <!-- Tambahkan skin-card ke-11 hingga 16 -->
-    <div class="skin-card">
-      <a href="skin11.html"><img src="https://i.ibb.co/Y43gK9Pq/Ling-Neobeast-Ling.jpg" /></a>
-      <p>2025-06-18</p><h4 class="skin-name">Ling Neobeast</h4>
-    </div>
-    <div class="skin-card">
-      <a href="skin12.html"><img src="https://i.ibb.co/tM7rjKfP/Kimmy-First-Order-Jet-Trooper.jpg" /></a>
-      <p>2025-06-18</p><h4 class="skin-name">Kimmy Starwars</h4>
-    </div>
-    <div class="skin-card">
-      <a href="skin13.html"><img src="https://i.ibb.co/G38gxv6h/Yi-Sun-shin-Lone-Destructor.jpg" /></a>
-      <p>2025-06-17</p><h4 class="skin-name">YSS Collector</h4>
-    </div>
-    <div class="skin-card">
-      <a href="skin14.html"><img src="https://i.ibb.co/1tkdFYdR/Zhask-Bone-Flamen.jpg" /></a>
-      <p>2025-06-17</p><h4 class="skin-name">Zhask Luckybox</h4>
-    </div>
-    <div class="skin-card">
-      <a href="skin15.html"><img src="https://i.ibb.co/rG0jB8VK/Hanzo-Soulfire-Netherlord.jpg" /></a>
-      <p>2025-06-17</p><h4 class="skin-name">Hanzo Collector</h4>
-    </div>
-    <div class="skin-card">
-      <a href="skin16.html"><img src="https://i.ibb.co/d4YmddDw/Novaria-Dragonsworn.jpg" /></a>
-      <p>2025-06-17</p><h4 class="skin-name">Novaria Collector</h4>
-    </div>
-  </div>
-
-  <!-- Pagination -->
+  <div class="skin-list" id="skinListContainer"></div>
   <div class="pagination">
     <a href="home.html">⏮️</a>
-    
     <a href="home.html">◀️</a>
     <a href="home.html" class="active">1</a>
     <a href="Page2-list-skin.html">2</a>
@@ -262,16 +225,12 @@
     <a href="page3.html">4</a>
     <a href="page4.html">5</a>
     <a href="Page2-list-skin.html">▶️</a>
-    
     <a href="page4.html">⏭️</a>
-
     <form onsubmit="return goToPage(event)" style="margin-top:15px;">
       <input type="number" id="pageNumber" placeholder="Ke halaman..." min="1" max="5">
       <button type="submit">Go</button>
     </form>
   </div>
-
-  <!-- Footer -->
   <footer>
     <div class="footer-container">
       <div>
@@ -295,7 +254,7 @@
           <li><a href="#">Fanny Aspirants</a></li>
         </ul>
       </div>
-       <div>
+      <div>
         <h4>Support</h4>
         <ul>
           <li>
@@ -318,8 +277,8 @@
       © 2025 Schwanz ML. Moonton All rights reserved.
     </div>
   </footer>
-
   <script>
+    
     function toggleMenu() {
       const menu = document.getElementById("dropdownMenu");
       menu.style.display = menu.style.display === "block" ? "none" : "block";
@@ -329,32 +288,78 @@
         document.getElementById("dropdownMenu").style.display = "none";
       }
     }
-    function filterSkins() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const cards = document.querySelectorAll('.skin-card');
-      cards.forEach(card => {
-        const name = card.querySelector('.skin-name').textContent.toLowerCase();
-        card.style.display = name.includes(input) ? '' : 'none';
-      });
-    }
     function goToPage(e) {
-  e.preventDefault();
-  const page = parseInt(document.getElementById('pageNumber').value);
-  
-  if (page === 1) {
-    window.location.href = 'home.html';
-  } else if (page === 2) {
-    window.location.href = 'Page2-list-skin.html';
-  } else if (page === 3) {
-    window.location.href = 'page2.html';
-  } else if (page === 4) {
-    window.location.href = 'page3.html';
-  } else if (page === 5) {
-    window.location.href = 'page4.html';
+      e.preventDefault();
+      const page = parseInt(document.getElementById('pageNumber').value);
+      if (page === 1) {
+        window.location.href = 'home.html';
+      } else if (page === 2) {
+        window.location.href = 'Page2-list-skin.html';
+      } else if (page === 3) {
+        window.location.href = 'Page3-list-skin.html';
+      } else if (page === 4) {
+        window.location.href = 'page3.html';
+      } else if (page === 5) {
+        window.location.href = 'page4.html';
+      } else {
+        alert("Halaman tidak tersedia.");
+      }
+    }
+  </script>
+  <script>
+  // Data semua skin (gabungan page 1-3)
+  const allSkins = [
+    { name: "Natan MSC", date: "2025-06-18", image: "https://i.ibb.co/N2wWZMnp/61afda13300cc1359156fc977532a096.jpg", link: "natan-msc.html" },
+    { name: "Luo Yi Create", date: "2025-06-18", image: "https://i.ibb.co/B2FV3HFw/c7102aafa707e26e090d21daee9ccc95.jpg", link: "luo-yi-create.html" },
+    { name: "Ling Neobeast", date: "2025-06-18", image: "https://i.ibb.co/Y43gK9Pq/Ling-Neobeast-Ling.jpg", link: "#" },
+    { name: "Kimmy Starwars", date: "2025-06-18", image: "https://i.ibb.co/tM7rjKfP/Kimmy-First-Order-Jet-Trooper.jpg", link: "#" },
+    { name: "YSS Collector", date: "2025-06-17", image: "https://i.ibb.co/G38gxv6h/Yi-Sun-shin-Lone-Destructor.jpg", link: "#" },
+    { name: "Zhask Luckybox", date: "2025-06-17", image: "https://i.ibb.co/1tkdFYdR/Zhask-Bone-Flamen.jpg", link: "#" },
+    { name: "Hanzo Collector", date: "2025-06-17", image: "https://i.ibb.co/rG0jB8VK/Hanzo-Soulfire-Netherlord.jpg", link: "#" },
+    { name: "Novaria Collector", date: "2025-06-17", image: "https://i.ibb.co/d4YmddDw/Novaria-Dragonsworn.jpg", link: "#" },
+
+    // Tambahan dari page lain (biar bisa disearch juga)
+    { name: "Lesley Fatcat", date: "2025-06-14", image: "https://i.ibb.co/671dMQwW/dfec59785ee85599cffd242b898bc99b.jpg", link: "lesley-fatcat.html" },
+    { name: "Julian Fatcat", date: "2025-06-14", image: "https://i.ibb.co/0jzMn1MJ/55a232e5bff91b81d0055b4b0ad0e63b.jpg", link: "#" },
+    { name: "Granger Exorcist", date: "2025-06-13", image: "https://i.ibb.co/fxRzQpg/granger.jpg", link: "granger-exorcist.html" },
+  ];
+
+  function renderSkins(skinsToShow) {
+    const container = document.getElementById('skinListContainer');
+    container.innerHTML = "";
+
+    skinsToShow.forEach(skin => {
+      container.innerHTML += `
+        <div class="skin-card">
+          <a href="${skin.link}">
+            <img src="${skin.image}" />
+          </a>
+          <p>${skin.date}</p>
+          <h4 class="skin-name">${skin.name}</h4>
+        </div>
+      `;
+    });
+  }
+
+  // Tampilkan hanya 8 skin awal di halaman
+  renderSkins(allSkins.slice(0, 8));
+
+  function filterSkins() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+
+  if (input === "") {
+    // Kalau kotak pencarian kosong, tampilkan kembali 8 skin utama
+    renderSkins(allSkins.slice(0, 8));
   } else {
-    alert("Halaman tidak tersedia.");
+    // Kalau ada input, filter dan tampilkan hasil pencarian
+    const filtered = allSkins.filter(skin => skin.name.toLowerCase().includes(input));
+    renderSkins(filtered);
   }
 }
-  </script>
+</script>
+<div onclick="goToSkin('${skin.link}')">
+  <img src="${skin.image}" />
+</div>
+<div id="processingText" class="processing-text">Memproses...</div>
 </body>
 </html>
