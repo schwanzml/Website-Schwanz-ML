@@ -241,23 +241,23 @@
     </div>
   </div>
 
-  <!-- Pagination -->
-  <div class="pagination">
-    <a href="home.html">⏮️</a>
-    <a href="home.html">&lt;</a>
-    <a href="home.html">1</a>
-    <a href="Page2-list-skin.html" class="active">2</a>
-    <a href="page2.html">3</a>
-    <a href="page3.html">4</a>
-    <a href="page4.html">5</a>
-    <a href="page2.html">&gt;</a>
-    <a href="page4.html">⏭️</a>
+<!-- Pagination -->
+<div class="pagination">
+  <a href="home.html">⏮️</a>
+  <a href="home.html">◀️</a>
+  <a href="home.html">1</a>
+  <a href="Page2-list-skin.html" class="active">2</a>
+  <a href="Page3-list-skin.html">3</a>
+  <a href="Page4-list-skin.html">4</a>
+  <a href="Page5-list-skin.html">5</a>
+  <a href="Page3-list-skin.html">▶️</a>
+  <a href="Page5-list-skin.html">⏭️</a>
 
-    <form onsubmit="return goToPage(event)" style="margin-top:15px;">
-      <input type="2" id="pageNumber" placeholder="Ke halaman..." min="1" max="5">
-      <button type="submit">Go</button>
-    </form>
-  </div>
+  <form onsubmit="return goToPage(event)" style="margin-top:15px;">
+    <input type="number" id="pageNumber" placeholder="Ke halaman..." min="1" max="5" required>
+    <button type="submit">Go</button>
+  </form>
+</div>
 
   <!-- Footer -->
   <footer>
@@ -326,16 +326,16 @@
       });
     }
     function goToPage(e) {
-      e.preventDefault();
-      const page = document.getElementById('pageNumber').value;
-      if (page == 1) {
-        window.location.href = 'home.html';
-      } else if (page >= 2 && page <= 5) {
-        window.location.href = `page${page - 1}.html`;
-      } else {
-        alert("Halaman tidak tersedia.");
-      }
-    }
+  e.preventDefault();
+  const page = parseInt(document.getElementById('pageNumber').value);
+  if (page === 1) {
+    window.location.href = 'home.html';
+  } else if (page >= 2 && page <= 5) {
+    window.location.href = `Page${page}-list-skin.html`;
+  } else {
+    alert("Halaman tidak tersedia.");
+  }
+}
   </script>
 </body>
 </html>
