@@ -6,6 +6,12 @@
   <title>Schwanz ML - Page 1</title>
   <style>
     body {
+      .hamburger {
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
+  margin-right: 15px; /* atau 15px kalau mau lebih ke kiri */
+}
       margin: 0;
       font-family: Arial, sans-serif;
       background: white;
@@ -248,13 +254,15 @@
   <!-- Pagination -->
   <div class="pagination">
     <a href="home.html">⏮️</a>
-    <a href="home.html">&lt;</a>
+    
+    <a href="home.html">◀️</a>
     <a href="home.html" class="active">1</a>
     <a href="Page2-list-skin.html">2</a>
-    <a href="page2.html">3</a>
+    <a href="Page3-list-skin.html">3</a>
     <a href="page3.html">4</a>
     <a href="page4.html">5</a>
-    <a href="page2.html">&gt;</a>
+    <a href="Page2-list-skin.html">▶️</a>
+    
     <a href="page4.html">⏭️</a>
 
     <form onsubmit="return goToPage(event)" style="margin-top:15px;">
