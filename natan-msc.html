@@ -229,10 +229,21 @@
     <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
   </div>
 
-  <!-- SEARCH BAR DIPINDAH KE SINI -->
-  <div class="search-wrapper" style="margin-top: 10px;">
-    <input type="text" placeholder="Search nama skin..." id="searchInput" onkeyup="filterTable()" />
+   <!-- SEARCH BAR DIPINDAH KE SINI -->
+  <!-- SEARCH BAR -->
+<div class="search-wrapper" style="margin-top: 10px;">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Cari skin (tekan Enter untuk buka)..."
+    onkeyup="handleSearch(event)"
+  />
+  
+  <!-- TARUH DI SINI -->
+  <div id="search-loader" style="display:none; text-align:center; margin-top:10px;">
+    <span style="color:#007bff;">🔍 Mencari skin...</span>
   </div>
+</div>
 
   <div id="dropdownMenu" class="dropdown">
     <a href="home.html">Home</a>
@@ -294,12 +305,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>Default</td><td><a class="btn-download" href="https://sfl.gl/3TjFwjoz">✓ Download</a></td></tr>
-        <tr><td>Basic</td><td><a class="btn-download" href="https://sfl.gl/ejBsNaUb">✓ Download</a></td></tr>
-        <tr><td>Elite</td><td><a class="btn-download" href="https://sfl.gl/UeybxyX">✓ Download</a></td></tr>
-        <tr><td>Starlight</td><td><a class="btn-download" href="https://sfl.gl/6XNWlYSZ">✓ Download</a></td></tr>
-        <tr><td>Special</td><td><a class="btn-download" href="https://sfl.gl/uYHoy">✓ Download</a></td></tr>
-        <tr><td>Collector</td><td><a class="btn-download" href="https://sfl.gl/CBk4Rvdb">✓ Download</a></td></tr>
+        <tr><td>Default</td><td><a class="btn-download" href="#">✓ Download</a></td></tr>
+        <tr><td>Basic</td><td><a class="btn-download" href="#">✓ Download</a></td></tr>
+        <tr><td>Elite</td><td><a class="btn-download" href="#">✓ Download</a></td></tr>
+        <tr><td>Starlight</td><td><a class="btn-download" href="#">✓ Download</a></td></tr>
+        <tr><td>Special</td><td><a class="btn-download" href="#">✓ Download</a></td></tr>
+        <tr><td>Collector</td><td><a class="btn-download" href="#">✓ Download</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -309,7 +320,7 @@
   </div>
 
   <div class="info-box red-box">
-    Jika ada kerusakan/bug seperti tidak ada suara, tidak ada efek skill dan lain lain, silahkan lapor ke admin <a href="#" style="color:red;text-decoration:underline;">disini</a>
+    Jika ada kerusakan/bug seperti tidak ada suara, tidak ada efek skill dan lain lain, silahkan lapor ke admin <a href="https://youtube.com/@schwanzml?si=m26qJTLflXkCr7vx" style="color:red;text-decoration:underline;">disini</a>
   </div>
 
   <footer>
@@ -360,26 +371,46 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("dropdownMenu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
-    window.onclick = function (e) {
-      if (!e.target.matches('.hamburger')) {
-        document.getElementById("dropdownMenu").style.display = "none";
-      }
-    }
+  const skinData = [
+    { name: "natan msc", url: "natan-msc.html" },
+    { name: "luo yi create", url: "luo-yi-create.html" },
+    { name: "ling neobeast", url: "skin11.html" },
+    { name: "kimmy starwars", url: "skin12.html" },
+    { name: "yss collector", url: "skin13.html" },
+    { name: "zhask luckybox", url: "skin14.html" },
+    { name: "hanzo collector", url: "skin15.html" },
+    { name: "novaria collector", url: "skin16.html" }
+  ];
 
-    function filterTable() {
-      const input = document.getElementById('searchInput');
-      const filter = input.value.toLowerCase();
-      const rows = document.querySelectorAll('.table-container tbody tr');
+  function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
 
-      rows.forEach(row => {
-        const skin = row.cells[0].textContent.toLowerCase();
-        row.style.display = skin.includes(filter) ? '' : 'none';
-      });
+  window.onclick = function (e) {
+    if (!e.target.matches('.hamburger')) {
+      document.getElementById("dropdownMenu").style.display = "none";
     }
-  </script>
+  }
+
+  function handleSearch(event) {
+    if (event.key === "Enter") {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const loader = document.getElementById('search-loader');
+      loader.style.display = 'block';
+
+      setTimeout(() => {
+        const match = skinData.find(skin => skin.name.includes(input));
+        loader.style.display = 'none';
+
+        if (match) {
+          window.location.href = match.url;
+        } else {
+          alert("Skin tidak ditemukan. Coba kata kunci lain.");
+        }
+      }, 800);
+    }
+  }
+</script>
 </body>
 </html>
