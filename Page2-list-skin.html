@@ -272,30 +272,22 @@
 
   <script>
   const allSkins = [
-    { name: "Lukas X Naruto", date: "2025-04-11", image: "https://i.ibb.co/m1zG04k/Lukas-Naruto-Uzumaki.jpg", link: "lukas-x-naruto.html" },
-    { name: "Suyou X Sasuke", date: "2025-04-28", image: "https://i.ibb.co/PvHhbvXW/Suyou-Sasuke-Uchiha.jpg", link: "suyou-x-sasuke.html" },
     { name: "Hayabusa X Kakashi", date: "2025-04-11", image: "https://i.ibb.co/Z6PN1bqx/Hayabusa-Kakashi-Hatake.jpg", link: "hayabusa-x-kakashi.html" },
     { name: "Kalea X Sakura", date: "2025-04-11", image: "https://i.ibb.co/xqtGyLcH/Kalea-Sakura-Haruno.jpg", link: "kalea-x-sakura.html" },
     { name: "Vale X Gaara", date: "2025-04-12", image: "https://i.ibb.co/1G8vTwR8/Vale-Gaara.jpg", link: "vale-x-gaara.html" },
     { name: "Brody Neobeast", date: "2025-03-20", image: "https://i.ibb.co/KpSnsrm3/Brody-Neobeast-Brody.jpg", link: "brody-neobeast.html" },
     { name: "Selena Zenith", date: "2025-01-24", image: "https://i.ibb.co/gZXG6nfw/Selena-Curse-of-Cinder.jpg", link: "selena-zenith.html" },
     { name: "Gusion KOF", date: "2025-01-23", image: "https://i.ibb.co/k2D14XhK/Gusion-K.jpg", link: "gusion-kof.html" },
-    { name: "Natan MSC", date: "2025-06-21", image: "https://i.ibb.co/N2wWZMnp/61afda13300cc1359156fc977532a096.jpg", link: "natan-msc.html" },
-    { name: "Julian Fatcat", date: "2025-06-19", image: "https://i.ibb.co/S7HMV0cj/55a232e5bff91b81d0055b4b0ad0e63b.jpg", link: "julian-fatcat.html" },
-    { name: "Lesley Fatcat", date: "2025-06-20", image: "https://i.ibb.co/671dMQwW/dfec59785ee85599cffd242b898bc99b.jpg", link: "lesley-fatcat.html" },
-    { name: "Silvanna Fatcat", date: "2025-05-29", image: "https://i.ibb.co/Rp4kfhSP/78fea185496a53bfd373abfe2192a9f0.jpg", link: "silvanna-fatcat.html" },
-    { name: "Alucard Luckybox", date: "2025-06-25", image: "https://i.ibb.co/DDGF1B75/20250625-073352.jpg", link: "alucard-luckybox.html" },
     { name: "Chou KOF", date: "2025-01-11", image: "https://i.ibb.co/hxsdgGD1/Chou-Iori-Yagami.jpg", link: "chou-kof.html" },
     { name: "Floryn Collector", date: "2025-01-11", image: "https://i.ibb.co/4ndjxyx3/Floryn-Melody-of-Light.jpg", link: "floryn-collector.html" },
-    { name: "Terizla Collector", date: "2024-12-21", image: "https://i.ibb.co/chRwfX5Y/Terizla-Soulblight-Tyrant.jpg", link: "terizla-collector.html" },
-    { name: "Johnson Collector", date: "2024-12-20", image: "https://i.ibb.co/GfTzHcPh/Johnson-Sovereign-of-Realms.jpg", link: "johnson-collector.html" },
+    
   ];
 
   // Urutkan berdasarkan tanggal (terbaru ke lama)
   const sortedSkins = allSkins.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   // Tampilkan skin halaman 2: index ke-8 sampai 15
-  renderSkins(sortedSkins.slice(8, 16));
+  renderSkins(sortedSkins);
 
   function renderSkins(skins) {
     const container = document.querySelector('.skin-list');
