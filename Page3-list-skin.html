@@ -259,15 +259,17 @@
 
   <script>
   const allSkins = [
-    { name: "Julian Fatcat", date: "2025-06-19", image: "https://i.ibb.co/S7HMV0cj/55a232e5bff91b81d0055b4b0ad0e63b.jpg", link: "julian-fatcat.html" },
-    { name: "Lesley Fatcat", date: "2025-06-20", image: "https://i.ibb.co/671dMQwW/dfec59785ee85599cffd242b898bc99b.jpg", link: "lesley-fatcat.html" },
+    { name: "Julian HXH", date: "2024-12-07", image: "https://i.ibb.co/xKQdhVQT/Julian-Kurapika.jpg", link: "julian-hxh.html" },
+    { name: "Dyrroth HXH", date: "2024-12-07", image: "https://i.ibb.co/qY4jss95/Dyrroth-Gon.jpg", link: "dyrrtoh-hxh.html" },
     { name: "Silvanna Fatcat", date: "2025-05-29", image: "https://i.ibb.co/Rp4kfhSP/78fea185496a53bfd373abfe2192a9f0.jpg", link: "silvanna-fatcat.html" },
-    { name: "Alucard Luckybox", date: "2025-06-25", image: "https://i.ibb.co/DDGF1B75/20250625-073352.jpg", link: "alucard-luckybox.html" },
-    { name: "Chou KOF", date: "2025-01-11", image: "https://i.ibb.co/hxsdgGD1/Chou-Iori-Yagami.jpg", link: "chou-kof.html" },
-    { name: "Floryn Collector", date: "2025-01-11", image: "https://i.ibb.co/4ndjxyx3/Floryn-Melody-of-Light.jpg", link: "floryn-collector.html" },
+    
+    { name: "Arlott Collector", date: "2025-01-11", image: "https://i.ibb.co/0yX00wf9/20250625-221301.jpg", link: "arlott-collector" },
+    { name: "Clint Epic", date: "2025-01-11", image: "https://i.ibb.co/Xrk43h5K/Clint-Captain-of-the-Reefs.jpg", link: "clint-epic.html" },
     { name: "Terizla Collector", date: "2024-12-21", image: "https://i.ibb.co/chRwfX5Y/Terizla-Soulblight-Tyrant.jpg", link: "terizla-collector.html" },
     { name: "Johnson Collector", date: "2024-12-20", image: "https://i.ibb.co/GfTzHcPh/Johnson-Sovereign-of-Realms.jpg", link: "johnson-collector.html" },
-    { name: "Natan Msc", date: "2025-06-21", image: "https://i.ibb.co/GfTzHcPh/Johnson-Sovereign-of-Realms.jpg", link: "natan-msc.html" }
+    { name: "Harith HXH", date: "2024-12-07", image: "https://i.ibb.co/wmkt7pK/Harith-Killua.jpg", link: "harith-hxh.html" },
+    
+    
   ];
 
   // Urutkan skin berdasarkan tanggal terbaru
@@ -288,16 +290,16 @@
   }
 
   function filterSkins() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
-    if (input === "") {
-      renderSkins(sortedSkins.slice(16, 24)); // tampilkan data default jika kosong
-    } else {
-      const filtered = sortedSkins.filter(skin =>
-        skin.name.toLowerCase().includes(input)
-      );
-      renderSkins(filtered);
-    }
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  if (input === "") {
+    renderSkins(sortedSkins); // tampilkan semua skin saat input kosong
+  } else {
+    const filtered = sortedSkins.filter(skin =>
+      skin.name.toLowerCase().includes(input)
+    );
+    renderSkins(filtered);
   }
+}
 
   function toggleMenu() {
     const menu = document.getElementById("dropdownMenu");
