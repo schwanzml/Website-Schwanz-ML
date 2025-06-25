@@ -12,8 +12,8 @@
       color: #111;
     }
     .name {
-  font-weight: bold;
-  font-size: 20px;
+      font-weight: bold;
+      font-size: 20px;
     }
     .header, .welcome-bar, .search-wrapper, .dropdown, .skin-list, .pagination, footer {
       padding: 0 20px;
@@ -58,10 +58,10 @@
       color: #007bff;
     }
     .hamburger {
-  font-size: 26px;
-  cursor: pointer;
-  margin-right: 15px; /* tambahkan ini atau kurangi */
-}
+      font-size: 26px;
+      cursor: pointer;
+      margin-right: 15px;
+    }
     .dropdown {
       display: none;
       position: absolute;
@@ -130,14 +130,14 @@
       margin-top: 30px;
     }
     .pagination a.active {
-  background: #007bff;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  border: 1px solid #0056b3;
-  font-weight: bold;
-  box-shadow: 0 0 4px rgba(0,0,0,0.2);
-}
+      background: #007bff;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #0056b3;
+      font-weight: bold;
+      box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    }
     .pagination input {
       padding: 8px 12px;
       border-radius: 20px;
@@ -185,7 +185,6 @@
 </head>
 <body>
 
-  <!-- Header & Welcome -->
   <div class="welcome-bar"><div class="moving-text">SELAMAT DATANG!</div></div>
   <div class="header">
     <div class="branding">
@@ -195,77 +194,35 @@
     <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
   </div>
 
-  <!-- Search -->
   <div class="search-wrapper">
     <input type="text" placeholder="Search disini..." id="searchInput" onkeyup="filterSkins()" />
   </div>
 
-  <!-- Menu Dropdown -->
   <div id="dropdownMenu" class="dropdown">
     <a href="home.html">Home</a>
     <a href="category.html">Category</a>
     <a href="Social.html">Social</a>
   </div>
 
-  <!-- Skin Cards - Page 1 -->
-  <div class="skin-list">
-    <div class="skin-card">
-      <a href="lukas-x-naruto.html"><img src="https://i.ibb.co/m1zG04k/Lukas-Naruto-Uzumaki.jpg" /></a>
-      <p>2025-04-11</p><h4 class="skin-name">Lukas X Naruto</h4>
-    </div>
-    <div class="skin-card">
-  <a href="suyou-x-sasuke.html">
-    <img src="https://i.ibb.co/PvHhbvXW/Suyou-Sasuke-Uchiha.jpg" alt="Suyou X Sasuke" />
-  </a>
-  <p>2025-04-28</p>
-  <h4 class="skin-name">Suyou X Sasuke</h4>
-</div>
-    <!-- Tambahkan skin-card ke-11 hingga 16 -->
-    <div class="skin-card">
-      <a href="hayabusa-x-kakashi.html"><img src="https://i.ibb.co/Z6PN1bqx/Hayabusa-Kakashi-Hatake.jpg" /></a>
-      <p>2025-04-11</p><h4 class="skin-name">Hayabusa X Kakashi</h4>
-    </div>
-    <div class="skin-card">
-      <a href="#"><img src="https://i.ibb.co/xqtGyLcH/Kalea-Sakura-Haruno.jpg" /></a>
-      <p>2025-06-18</p><h4 class="skin-name">Kalea X Sakura</h4>
-    </div>
-    <div class="skin-card">
-      <a href="#"><img src="https://i.ibb.co/1G8vTwR8/Vale-Gaara.jpg" /></a>
-      <p>2025-06-17</p><h4 class="skin-name">Vale X Gaara</h4>
-    </div>
-    <div class="skin-card">
-      <a href="#"><img src="https://i.ibb.co/KpSnsrm3/Brody-Neobeast-Brody.jpg" /></a>
-      <p>2025-06-17</p><h4 class="skin-name">Brody Neobeast</h4>
-    </div>
-    <div class="skin-card">
-      <a href="#"><img src="https://i.ibb.co/gZXG6nfw/Selena-Curse-of-Cinder.jpg" /></a>
-      <p>2025-06-17</p><h4 class="skin-name">Selena Zenith</h4>
-    </div>
-    <div class="skin-card">
-      <a href="#"><img src="https://i.ibb.co/k2D14XhK/Gusion-K.jpg" /></a>
-      <p>2025-06-17</p><h4 class="skin-name">Gusion KOF</h4>
-    </div>
+  <div class="skin-list"></div>
+
+  <div class="pagination">
+    <a href="home.html">⏮️</a>
+    <a href="home.html">◀️</a>
+    <a href="home.html">1</a>
+    <a href="Page2-list-skin.html" class="active">2</a>
+    <a href="Page3-list-skin.html">3</a>
+    <a href="Page4-list-skin.html">4</a>
+    <a href="Page5-list-skin.html">5</a>
+    <a href="Page3-list-skin.html">▶️</a>
+    <a href="Page5-list-skin.html">⏭️</a>
+
+    <form onsubmit="return goToPage(event)" style="margin-top:15px;">
+      <input type="number" id="pageNumber" placeholder="Ke halaman..." min="1" max="5" required>
+      <button type="submit">Go</button>
+    </form>
   </div>
 
-<!-- Pagination -->
-<div class="pagination">
-  <a href="home.html">⏮️</a>
-  <a href="home.html">◀️</a>
-  <a href="home.html">1</a>
-  <a href="Page2-list-skin.html" class="active">2</a>
-  <a href="Page3-list-skin.html">3</a>
-  <a href="Page4-list-skin.html">4</a>
-  <a href="Page5-list-skin.html">5</a>
-  <a href="Page3-list-skin.html">▶️</a>
-  <a href="Page5-list-skin.html">⏭️</a>
-
-  <form onsubmit="return goToPage(event)" style="margin-top:15px;">
-    <input type="number" id="pageNumber" placeholder="Ke halaman..." min="1" max="5" required>
-    <button type="submit">Go</button>
-  </form>
-</div>
-
-  <!-- Footer -->
   <footer>
     <div class="footer-container">
       <div>
@@ -289,17 +246,17 @@
           <li><a href="#">Fanny Aspirants</a></li>
         </ul>
       </div>
-       <div>
+      <div>
         <h4>Support</h4>
         <ul>
           <li>
-            <a href="https://saweria.co/SchwanzSigma" style="display: flex; align-items: center;">
+            <a href="https://saweria.co/SchwanzSigma">
               <img src="https://i.ibb.co/60F6zbCb/fe760d42-6c85-417a-9330-1a1578cfa4a5-removalai-preview.png" alt="Saweria" style="width:18px; height:18px; margin-right:6px;" />
               Saweria
             </a>
           </li>
           <li>
-            <a href="https://tako.id/SchwanzML" style="display: flex; align-items: center;">
+            <a href="https://tako.id/SchwanzML">
               <img src="https://i.ibb.co/gbWG2hmb/26d1567e-eb15-4f22-b848-1326d8d175ef-removalai-preview.png" alt="Tako ID" style="width:18px; height:18px; margin-right:6px;" />
               Tako ID
             </a>
@@ -314,34 +271,69 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("dropdownMenu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
-    window.onclick = function (e) {
-      if (!e.target.matches('.hamburger')) {
-        document.getElementById("dropdownMenu").style.display = "none";
-      }
-    }
-    function filterSkins() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const cards = document.querySelectorAll('.skin-card');
-      cards.forEach(card => {
-        const name = card.querySelector('.skin-name').textContent.toLowerCase();
-        card.style.display = name.includes(input) ? '' : 'none';
-      });
-    }
-    function goToPage(e) {
-  e.preventDefault();
-  const page = parseInt(document.getElementById('pageNumber').value);
-  if (page === 1) {
-    window.location.href = 'home.html';
-  } else if (page >= 2 && page <= 5) {
-    window.location.href = `Page${page}-list-skin.html`;
-  } else {
-    alert("Halaman tidak tersedia.");
+  const allSkins = [
+    { name: "Lukas X Naruto", date: "2025-04-11", image: "https://i.ibb.co/m1zG04k/Lukas-Naruto-Uzumaki.jpg", link: "lukas-x-naruto.html" },
+    { name: "Suyou X Sasuke", date: "2025-04-28", image: "https://i.ibb.co/PvHhbvXW/Suyou-Sasuke-Uchiha.jpg", link: "suyou-x-sasuke.html" },
+    { name: "Hayabusa X Kakashi", date: "2025-04-11", image: "https://i.ibb.co/Z6PN1bqx/Hayabusa-Kakashi-Hatake.jpg", link: "hayabusa-x-kakashi.html" },
+    { name: "Kalea X Sakura", date: "2025-04-11", image: "https://i.ibb.co/xqtGyLcH/Kalea-Sakura-Haruno.jpg", link: "kalea-x-sakura.html" },
+    { name: "Vale X Gaara", date: "2025-04-12", image: "https://i.ibb.co/1G8vTwR8/Vale-Gaara.jpg", link: "vale-x-gaara.html" },
+    { name: "Brody Neobeast", date: "2025-03-20", image: "https://i.ibb.co/KpSnsrm3/Brody-Neobeast-Brody.jpg", link: "brody-neobeast.html" },
+    { name: "Selena Zenith", date: "2025-01-24", image: "https://i.ibb.co/gZXG6nfw/Selena-Curse-of-Cinder.jpg", link: "selena-zenith.html" },
+    { name: "Gusion KOF", date: "2025-01-23", image: "https://i.ibb.co/k2D14XhK/Gusion-K.jpg", link: "gusion-kof.html" },
+    { name: "Natan MSC", date: "2025-06-21", image: "https://i.ibb.co/N2wWZMnp/61afda13300cc1359156fc977532a096.jpg", link: "natan-msc.html" },
+    { name: "Julian Fatcat", date: "2025-06-19", image: "https://i.ibb.co/S7HMV0cj/55a232e5bff91b81d0055b4b0ad0e63b.jpg", link: "julian-fatcat.html" },
+    { name: "Lesley Fatcat", date: "2025-06-20", image: "https://i.ibb.co/671dMQwW/dfec59785ee85599cffd242b898bc99b.jpg", link: "lesley-fatcat.html" },
+    { name: "Silvanna Fatcat", date: "2025-05-29", image: "https://i.ibb.co/Rp4kfhSP/78fea185496a53bfd373abfe2192a9f0.jpg", link: "silvanna-fatcat.html" },
+    { name: "Alucard Luckybox", date: "2025-06-25", image: "https://i.ibb.co/DDGF1B75/20250625-073352.jpg", link: "alucard-luckybox.html" },
+    { name: "Chou KOF", date: "2025-01-11", image: "https://i.ibb.co/hxsdgGD1/Chou-Iori-Yagami.jpg", link: "chou-kof.html" },
+    { name: "Floryn Collector", date: "2025-01-11", image: "https://i.ibb.co/4ndjxyx3/Floryn-Melody-of-Light.jpg", link: "floryn-collector.html" },
+    { name: "Terizla Collector", date: "2024-12-21", image: "https://i.ibb.co/chRwfX5Y/Terizla-Soulblight-Tyrant.jpg", link: "terizla-collector.html" },
+    { name: "Johnson Collector", date: "2024-12-20", image: "https://i.ibb.co/GfTzHcPh/Johnson-Sovereign-of-Realms.jpg", link: "johnson-collector.html" },
+  ];
+
+  // Urutkan berdasarkan tanggal (terbaru ke lama)
+  const sortedSkins = allSkins.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  // Tampilkan skin halaman 2: index ke-8 sampai 15
+  renderSkins(sortedSkins.slice(8, 16));
+
+  function renderSkins(skins) {
+    const container = document.querySelector('.skin-list');
+    container.innerHTML = "";
+
+    skins.forEach(skin => {
+      container.innerHTML += `
+        <div class="skin-card">
+          <a href="${skin.link}"><img src="${skin.image}" alt="${skin.name}" /></a>
+          <p>${skin.date}</p>
+          <h4 class="skin-name">${skin.name}</h4>
+        </div>
+      `;
+    });
   }
-}
-  </script>
+
+  function filterSkins() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    if (input === "") {
+      renderSkins(sortedSkins.slice(8, 16)); // reset ke halaman 2
+    } else {
+      const filtered = allSkins.filter(skin =>
+        skin.name.toLowerCase().includes(input)
+      );
+      renderSkins(filtered);
+    }
+  }
+
+  function goToPage(e) {
+    e.preventDefault();
+    const page = parseInt(document.getElementById('pageNumber').value);
+    if (page === 1) window.location.href = 'home.html';
+    else if (page === 2) window.location.href = 'Page2-list-skin.html';
+    else if (page === 3) window.location.href = 'Page3-list-skin.html';
+    else if (page === 4) window.location.href = 'Page4-list-skin.html';
+    else if (page === 5) window.location.href = 'Page5-list-skin.html';
+    else alert("Halaman tidak tersedia.");
+  }
+</script>
 </body>
 </html>
