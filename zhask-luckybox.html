@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zhask Luckybox - Download</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+      color: #111;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    .branding {
+      display: flex;
+      align-items: center;
+    }
+    .branding img {
+      width: 45px;
+      height: 45px;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+    .branding .name {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .ml-blue {
+      color: #007bff;
+    }
+    .hamburger {
+      font-size: 26px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 100px;
+      background-color: #f9f9f9;
+      min-width: 140px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .dropdown a {
+      color: #111;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: 500;
+    }
+    .dropdown a:hover {
+      background-color: #ddd;
+    }
+    .info-box {
+      border: 2px solid;
+      padding: 15px;
+      margin: 15px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .blue-box {
+      border-color: #007bff;
+      color: #007bff;
+      text-align: center;
+    }
+    .red-box {
+      border-color: red;
+      color: red;
+      text-align: center;
+    }
+    .table-container {
+      padding: 0 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border-bottom: 1px solid #ccc;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .btn-download {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 2px solid #007bff;
+      border-radius: 25px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn-download:hover {
+      background-color: #007bff;
+      color: white;
+    }
+    .note {
+      font-size: 13px;
+      padding: 10px 15px;
+    }
+    .note span {
+      display: inline-block;
+      margin: 5px 0;
+    }
+    .hero-section {
+      padding: 0 15px;
+      text-align: center;
+    }
+    .hero-section h2 {
+      margin-bottom: 0;
+    }
+    .hero-section h4 {
+      margin-top: 5px;
+      font-weight: normal;
+    }
+    .hero-section iframe {
+      margin: 20px auto;
+      display: block;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    .feature-lists {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0 15px 30px;
+    }
+    .feature-box {
+      width: 48%;
+    }
+    .feature-box h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .feature-box ul {
+      padding-left: 18px;
+    }
+    .search-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0 0;
+      padding: 0 20px;
+    }
+    .search-wrapper input {
+      width: 100%;
+      max-width: 400px;
+      padding: 12px 18px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      outline: none;
+      transition: 0.3s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .search-wrapper input:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    }
+    footer {
+      background: #f1f1f1;
+      padding: 30px 20px;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+    .footer-container {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .footer-container div {
+      flex: 1 1 200px;
+    }
+    footer h3, footer h4 {
+      margin-bottom: 10px;
+    }
+    footer ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    footer ul li a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    footer ul li a:hover {
+      text-decoration: underline;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      color: #555;
+      font-size: 13px;
+    }
+    hr {
+      margin: 30px auto;
+      width: 90%;
+      border-color: #ccc;
+    }
+  </style>
+</head>
+<!-- ... (head & style tetap sama seperti sebelumnya) ... -->
+<body>
+  <div style="background-color:#007bff; color:white; font-weight:bold; text-align:center;">
+    <marquee behavior="scroll" direction="left">SELAMAT DATANG!</marquee>
+  </div>
+  <div class="header">
+    <div class="branding">
+      <img src="https://i.ibb.co/zHLk6RWq/cfacf0399b01eb6bcc47e2cdccc61603.jpg" alt="Logo Channel" />
+      <div class="name">Schwanz <span class="ml-blue">ML</span></div>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </div>
+
+  <!-- SEARCH BAR DIPINDAH KE SINI -->
+  <!-- SEARCH BAR -->
+<div class="search-wrapper" style="margin-top: 10px;">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Cari skin (tekan Enter untuk buka)..."
+    onkeyup="handleSearch(event)"
+  />
+  
+  <!-- TARUH DI SINI -->
+  <div id="search-loader" style="display:none; text-align:center; margin-top:10px;">
+    <span style="color:#007bff;">🔍 Mencari skin...</span>
+  </div>
+</div>
+
+  <div id="dropdownMenu" class="dropdown">
+    <a href="home.html">Home</a>
+    <a href="category.html">Category</a>
+    <a href="Social.html">Social</a>
+  </div>
+
+  <!-- Lanjut seperti biasa -->
+  <div class="hero-section">
+    <h2>Zhask Luckybox</h2>
+    <h4>(Download Dibawah)</h4>
+    <h3><u>Short Story</u></h3>
+    <p style="text-align:justify; max-width:600px; margin:auto;">
+      Zhask expanded his swarm as he pleased in the universe, disrupting its balance in the process. Yve pursued him, but Zhask was able to escape every time. When he shuffled to the Land of Dawn and attempted to destroy it, he was hit hard by the resistance of Aurora Aurora and Tobias, so he hibernated in Kastiya to recuperate. But at this time, Yve also arrived, so a dual was imminent.
+    </p> 
+    <iframe width="100%" height="215" src="https://youtube.com/embed//k3vDg6nfAFs" title="Zhask Luckybox" allowfullscreen></iframe>
+  </div>
+
+  <!-- ... (sisa konten tetap seperti sebelumnya) ... -->
+  </div>
+
+  <div class="feature-lists">
+    <div class="feature-box">
+      <h3>Support Voice</h3>
+      <ul>
+        <li>Indonesia</li>
+        <li>English</li>
+        <li>English PH</li>
+        <li>Japan</li>
+        <li>Arabic</li>
+        <li>Espanol</li>
+        <li>Portuguse</li>
+        <li>Rusia</li>
+        <li>Turkie</li>
+      </ul>
+    </div>
+    <div class="feature-box">
+      <h3>Kelebihan Lainnya</h3>
+      <ul>
+        <li>Support untuk grafik low</li>
+        <li>Head Icon</li>
+        <li>Skill Icon</li>
+        <li>Share Background</li>
+        <li>File sudah dikompres</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note">
+    <span>🗣️ Pilih sesuai dengan yang dibutuhkan.</span><br />
+    <span>❌ Jika download malah balik kesini, berarti filenya belum ada.</span>
+  </div>
+
+
+  <div class="table-container">
+    <h2 style="text-align:center;">Table List Zhask Luckybox</h2>
+    <p style="text-align:center;">Last Updated <strong>2025-04-12</strong></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Replace</th>
+          <th>Download</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Default</td><td><a class="btn-download" href="https://sfl.gl/WwM3">✓ Download</a></td></tr>
+        <tr><td>Basic</td><td><a class="btn-download" href="https://sfl.gl/kzTHWsNO">✓ Download</a></td></tr>
+        
+        <tr><td>Backup File</td><td><a class="btn-download" href="https://sfl.gl/cIjt4">✓ Download</a></td></tr>
+        
+        
+        
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box blue-box">
+    *Maaf kalo website sering error/ngebug. saya usahakan perbaiki secepatnya🙏
+  </div>
+
+  <div class="info-box red-box">
+    Jika ada kerusakan/bug seperti tidak ada suara, tidak ada efek skill dan lain lain, silahkan lapor ke admin <a href="https://youtube.com/@schwanzml?si=m26qJTLflXkCr7vx" style="color:red;text-decoration:underline;">disini</a>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h3>Komunitas MLBB Terbaik Sepanjang Masa!</h3>
+        <p>Gabung dan nikmati semua konten hero dan skin terbaru!</p>
+      </div>
+      <div>
+        <h4>Quick Link</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="category.html">Category</a></li>
+          <li><a href="Social.html">Social</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Popular</h4>
+        <ul>
+          <li><a href="hayabusa-x-kakashi.html">Hayabusa X Kakashi</a></li>
+          <li><a href="lukas-x-naruto.html">Lukas X Naruto</a></li>
+          <li><a href="#">Granger Exorcist</a></li>
+          <li><a href="#">Fanny Aspirants</a></li>
+        </ul>
+      </div>
+       <div>
+        <h4>Support</h4>
+        <ul>
+          <li>
+            <a href="https://saweria.co/SchwanzSigma" style="display: flex; align-items: center;">
+              <img src="https://i.ibb.co/60F6zbCb/fe760d42-6c85-417a-9330-1a1578cfa4a5-removalai-preview.png" alt="Saweria" style="width:18px; height:18px; margin-right:6px;" />
+              Saweria
+            </a>
+          </li>
+          <li>
+            <a href="https://tako.id/SchwanzML" style="display: flex; align-items: center;">
+              <img src="https://i.ibb.co/gbWG2hmb/26d1567e-eb15-4f22-b848-1326d8d175ef-removalai-preview.png" alt="Tako ID" style="width:18px; height:18px; margin-right:6px;" />
+              Tako ID
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="footer-bottom">
+      © 2025 Schwanz ML. Moonton All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+  const skinData = [
+    { name: "natan msc", url: "natan-msc.html" },
+    { name: "luo yi create", url: "luo-yi-create.html" },
+    { name: "ling neobeast", url: "skin11.html" },
+    { name: "kimmy starwars", url: "kimmy-starwars.html" },
+    { name: "yss collector", url: "yss-collector.html" },
+    { name: "zhask luckybox", url: "zhask-luckybox.html" },
+    { name: "hanzo collector", url: "skin15.html" },
+    { name: "novaria collector", url: "skin16.html" },
+    { name: "lesley fatcat", url: "lesley-fatcat.html" },
+    { name: "lukas x naruto", url: "lukas-x-naruto.html" },
+    { name: "suyou x sasuke", url: "suyou-x-sasuke.html" },
+    { name: "hayabusa x kakashi", url: "hayabusa-x-kakashi.html" },
+    { name: "ling neobeast", url: "ling-neobeast.html" },
+    { name: "alucard luckybox", url: "alucard-luckybox.html" },
+   
+    
+    
+  ];
+
+  function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  window.onclick = function (e) {
+    if (!e.target.matches('.hamburger')) {
+      document.getElementById("dropdownMenu").style.display = "none";
+    }
+  }
+
+  function handleSearch(event) {
+  if (event.key === "Enter") {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const loader = document.getElementById('search-loader');
+    loader.style.display = 'block';
+
+    setTimeout(() => {
+      const match = skinData.find(skin => skin.name.toLowerCase().includes(input));
+      loader.style.display = 'none';
+
+      if (match) {
+        window.location.href = match.url;
+      } else {
+        alert("Skin tidak ditemukan. Coba kata kunci lain.");
+      }
+    }, 800);
+  }
+}
+</script>
+</body>
+</html>
