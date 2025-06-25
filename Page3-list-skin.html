@@ -11,10 +11,7 @@
       background: white;
       color: #111;
     }
-    .name {
-  font-weight: bold;
-  font-size: 20px;
-    }
+    .name { font-weight: bold; font-size: 20px; }
     .header, .welcome-bar, .search-wrapper, .dropdown, .skin-list, .pagination, footer {
       padding: 0 20px;
     }
@@ -54,14 +51,12 @@
       border-radius: 8px;
       margin-right: 10px;
     }
-    .ml-blue {
-      color: #007bff;
-    }
+    .ml-blue { color: #007bff; }
     .hamburger {
-  font-size: 26px;
-  cursor: pointer;
-  margin-right: 15px; /* tambahkan ini atau kurangi */
-}
+      font-size: 26px;
+      cursor: pointer;
+      margin-right: 15px;
+    }
     .dropdown {
       display: none;
       position: absolute;
@@ -118,26 +113,21 @@
       margin: 0;
       padding: 6px 10px;
     }
-    .skin-card p {
-      font-size: 13px;
-      color: #666;
-    }
-    .skin-card h4 {
-      font-size: 15px;
-    }
+    .skin-card p { font-size: 13px; color: #666; }
+    .skin-card h4 { font-size: 15px; }
     .pagination {
       text-align: center;
       margin-top: 30px;
     }
     .pagination a.active {
-  background: #007bff;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  border: 1px solid #0056b3;
-  font-weight: bold;
-  box-shadow: 0 0 4px rgba(0,0,0,0.2);
-}
+      background: #007bff;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #0056b3;
+      font-weight: bold;
+      box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    }
     .pagination input {
       padding: 8px 12px;
       border-radius: 20px;
@@ -185,7 +175,6 @@
 </head>
 <body>
 
-  <!-- Header & Welcome -->
   <div class="welcome-bar"><div class="moving-text">SELAMAT DATANG!</div></div>
   <div class="header">
     <div class="branding">
@@ -195,77 +184,34 @@
     <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
   </div>
 
-  <!-- Search -->
   <div class="search-wrapper">
     <input type="text" placeholder="Search disini..." id="searchInput" onkeyup="filterSkins()" />
   </div>
 
-  <!-- Menu Dropdown -->
   <div id="dropdownMenu" class="dropdown">
     <a href="home.html">Home</a>
     <a href="category.html">Category</a>
-    <a href="Social.html">Social</a>
+    <a href="social.html">Social</a>
   </div>
 
-  <!-- Skin Cards - Page 1 -->
-  <div class="skin-list">
-    <div class="skin-card">
-      <a href="#"><img src="https://i.ibb.co/S7HMV0cj/55a232e5bff91b81d0055b4b0ad0e63b.jpg" /></a>
-      <p>2025-06-18</p><h4 class="skin-name">Julian Fatcat</h4>
-    </div>
-    <div class="skin-card">
-  <a href="lesley-fatcat.html">
-    <img src="https://i.ibb.co/671dMQwW/dfec59785ee85599cffd242b898bc99b.jpg" alt="Suyou X Sasuke" />
-  </a>
-  <p>2025-06-18</p>
-  <h4 class="skin-name">Lesley Fatcat</h4>
-</div>
-    <!-- Tambahkan skin-card ke-11 hingga 16 -->
-    <div class="skin-card">
-      <a href="#"><img src="https://i.ibb.co/Rp4kfhSP/78fea185496a53bfd373abfe2192a9f0.jpg" /></a>
-      <p>2025-06-18</p><h4 class="skin-name">Silvanna Fatcat</h4>
-    </div>
-    <div class="skin-card">
-      <a href="alucard-luckybox.html"><img src="https://i.ibb.co/DDGF1B75/20250625-073352.jpg" /></a>
-      <p>2025-06-18</p><h4 class="skin-name">Alucard Luckybox</h4>
-    </div>
-    <div class="skin-card">
-      <a href="#"><img src="https://i.ibb.co/1G8vTwR8/Vale-Gaara.jpg" /></a>
-      <p>2025-06-17</p><h4 class="skin-name">Vale X Gaara</h4>
-    </div>
-    <div class="skin-card">
-      <a href="#"><img src="https://i.ibb.co/KpSnsrm3/Brody-Neobeast-Brody.jpg" /></a>
-      <p>2025-06-17</p><h4 class="skin-name">Brody Neobeast</h4>
-    </div>
-    <div class="skin-card">
-      <a href="#"><img src="https://i.ibb.co/gZXG6nfw/Selena-Curse-of-Cinder.jpg" /></a>
-      <p>2025-06-17</p><h4 class="skin-name">Selena Zenith</h4>
-    </div>
-    <div class="skin-card">
-      <a href=#"><img src="https://i.ibb.co/k2D14XhK/Gusion-K.jpg" /></a>
-      <p>2025-06-17</p><h4 class="skin-name">Gusion KOF</h4>
-    </div>
+  <div class="skin-list" id="skinContainer"></div>
+
+  <div class="pagination">
+    <a href="home.html">⏮️</a>
+    <a href="home.html">◀️</a>
+    <a href="home.html">1</a>
+    <a href="Page2-list-skin.html">2</a>
+    <a href="Page3-list-skin.html" class="active">3</a>
+    <a href="Page4-list-skin.html">4</a>
+    <a href="Page5-list-skin.html">5</a>
+    <a href="Page4-list-skin.html">▶️</a>
+    <a href="Page5-list-skin.html">⏭️</a>
+    <form onsubmit="return goToPage(event)" style="margin-top:15px;">
+      <input type="number" id="pageNumber" placeholder="Ke halaman..." min="1" max="5" required>
+      <button type="submit">Go</button>
+    </form>
   </div>
 
-<!-- Pagination -->
-<div class="pagination">
-  <a href="home.html">⏮️</a>
-  <a href="home.html">◀️</a>
-  <a href="home.html">1</a>
-  <a href="Page2-list-skin.html">2</a>
-  <a href="Page3-list-skin.html" class="active">3</a>
-  <a href="Page4-list-skin.html">4</a>
-  <a href="Page5-list-skin.html">5</a>
-  <a href="Page4-list-skin.html">▶️</a>
-  <a href="Page5-list-skin.html">⏭️</a>
-
-  <form onsubmit="return goToPage(event)" style="margin-top:15px;">
-    <input type="number" id="pageNumber" placeholder="Ke halaman..." min="1" max="5" required>
-    <button type="submit">Go</button>
-  </form>
-</div>
-
-  <!-- Footer -->
   <footer>
     <div class="footer-container">
       <div>
@@ -289,7 +235,7 @@
           <li><a href="#">Fanny Aspirants</a></li>
         </ul>
       </div>
-       <div>
+      <div>
         <h4>Support</h4>
         <ul>
           <li>
@@ -308,30 +254,57 @@
       </div>
     </div>
     <hr />
-    <div class="footer-bottom">
-      © 2025 Schwanz ML. Moonton All rights reserved.
-    </div>
+    <div class="footer-bottom">© 2025 Schwanz ML. Moonton All rights reserved.</div>
   </footer>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("dropdownMenu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
+  const allSkins = [
+    { name: "Julian Fatcat", date: "2025-06-19", image: "https://i.ibb.co/S7HMV0cj/55a232e5bff91b81d0055b4b0ad0e63b.jpg", link: "julian-fatcat.html" },
+    { name: "Lesley Fatcat", date: "2025-06-20", image: "https://i.ibb.co/671dMQwW/dfec59785ee85599cffd242b898bc99b.jpg", link: "lesley-fatcat.html" },
+    { name: "Silvanna Fatcat", date: "2025-05-29", image: "https://i.ibb.co/Rp4kfhSP/78fea185496a53bfd373abfe2192a9f0.jpg", link: "silvanna-fatcat.html" },
+    { name: "Alucard Luckybox", date: "2025-06-25", image: "https://i.ibb.co/DDGF1B75/20250625-073352.jpg", link: "alucard-luckybox.html" },
+    { name: "Chou KOF", date: "2025-01-11", image: "https://i.ibb.co/hxsdgGD1/Chou-Iori-Yagami.jpg", link: "chou-kof.html" },
+    { name: "Floryn Collector", date: "2025-01-11", image: "https://i.ibb.co/4ndjxyx3/Floryn-Melody-of-Light.jpg", link: "floryn-collector.html" },
+    { name: "Terizla Collector", date: "2024-12-21", image: "https://i.ibb.co/chRwfX5Y/Terizla-Soulblight-Tyrant.jpg", link: "terizla-collector.html" },
+    { name: "Johnson Collector", date: "2024-12-20", image: "https://i.ibb.co/GfTzHcPh/Johnson-Sovereign-of-Realms.jpg", link: "johnson-collector.html" },
+    { name: "Natan Msc", date: "2025-06-21", image: "https://i.ibb.co/GfTzHcPh/Johnson-Sovereign-of-Realms.jpg", link: "natan-msc.html" }
+  ];
+
+  // Urutkan skin berdasarkan tanggal terbaru
+  const sortedSkins = allSkins.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  function renderSkins(skins) {
+    const container = document.getElementById("skinContainer");
+    container.innerHTML = "";
+    skins.forEach(skin => {
+      container.innerHTML += `
+        <div class="skin-card">
+          <a href="${skin.link}"><img src="${skin.image}" alt="${skin.name}" /></a>
+          <p>${skin.date}</p>
+          <h4 class="skin-name">${skin.name}</h4>
+        </div>
+      `;
+    });
+  }
+
+  function filterSkins() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    if (input === "") {
+      renderSkins(sortedSkins.slice(16, 24)); // tampilkan data default jika kosong
+    } else {
+      const filtered = sortedSkins.filter(skin =>
+        skin.name.toLowerCase().includes(input)
+      );
+      renderSkins(filtered);
     }
-    window.onclick = function (e) {
-      if (!e.target.matches('.hamburger')) {
-        document.getElementById("dropdownMenu").style.display = "none";
-      }
-    }
-    function filterSkins() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const cards = document.querySelectorAll('.skin-card');
-      cards.forEach(card => {
-        const name = card.querySelector('.skin-name').textContent.toLowerCase();
-        card.style.display = name.includes(input) ? '' : 'none';
-      });
-    }
-    function goToPage(e) {
+  }
+
+  function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  function goToPage(e) {
     e.preventDefault();
     const page = parseInt(document.getElementById('pageNumber').value);
     if (page === 1) {
@@ -342,6 +315,15 @@
       alert("Halaman tidak tersedia.");
     }
   }
-  </script>
+
+  window.onclick = function (e) {
+    if (!e.target.matches('.hamburger')) {
+      document.getElementById("dropdownMenu").style.display = "none";
+    }
+  };
+
+  // Panggil render setelah semua fungsi sudah didefinisikan
+  renderSkins(sortedSkins.slice(0, 8)); // ganti slice sesuai page ke-3
+</script>
 </body>
 </html>
